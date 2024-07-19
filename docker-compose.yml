@@ -1,5 +1,6 @@
 services:
   weather-app:
+    image: valet128/weather
     build: 
       context: .
     ports:
