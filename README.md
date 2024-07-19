@@ -3,6 +3,7 @@
 Для работы приложения нужны библиотеки:
 - django  
 - requests
+
 Для работы через докер есть образ:
 - https://hub.docker.com/r/valet128/weather
 
