@@ -1,0 +1,37 @@
+{% extends 'main/layout.html' %}
+{% block title %}Погода{% endblock %}
+
+
+{% block content %}
+    <div class="main-form">
+        <div class="form">
+            <form method="post">
+                {% csrf_token %}
+
+                {{ form.title }}
+
+                <datalist id="cities">
+                {% for city in cities %}
+                
+                <option>{{ city }}</option>
+                {% endfor %}
+                </datalist><br>
+                <input class="btn btn-warning" type="submit" value="Показать"><br><br>
+            </form>
+        </div>
+        <div class="city">{{ city }}</div>
+    </div>  
+    
+    <div class="list_weather">
+        
+        {% for i in weather %}
+        <div class="weather">
+            Дата: <span>{{ i.0 }}</span> 
+            Минимальная температура за день: <span>{{ i.1 }} С</span>   
+            Максимальная температура за день: <span>{{ i.2 }} С</span>
+        </div> 
+        {% endfor %}
+           
+    </div>
+    <div class="bottom"></div>
+{% endblock %}
